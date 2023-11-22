@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MPCLoyaltyModelStoreContainer" CdmEntityContainer="MPCLoyaltyEntities">
+    <FunctionImportMapping FunctionImportName="MPC_JUUL_MSA_Purch_Export_SP" FunctionName="MPCLoyaltyModel.Store.MPC_JUUL_MSA_Purch_Export_SP" />
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="MPCLoyaltyModel.Store">
+        <MappingFragment StoreEntitySet="Stores">
+          <ScalarProperty Name="Restaraunt" ColumnName="Restaraunt" />
+          <ScalarProperty Name="ColdFood" ColumnName="ColdFood" />
+          <ScalarProperty Name="HotFood" ColumnName="HotFood" />
+          <ScalarProperty Name="Gaming" ColumnName="Gaming" />
+          <ScalarProperty Name="PollFuelPrices" ColumnName="PollFuelPrices" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Carwash" ColumnName="Carwash" />
+          <ScalarProperty Name="Diesel" ColumnName="Diesel" />
+          <ScalarProperty Name="CStore" ColumnName="CStore" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Is24Hours" ColumnName="Is24Hours" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store_Name" />
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Installation_ID" ColumnName="Installation_ID" />
+          <ScalarProperty Name="Store_Number" ColumnName="Store_Number" />
+          <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
