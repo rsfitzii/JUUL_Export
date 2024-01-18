@@ -205,55 +205,55 @@ namespace JUUL_Export
 
             Directory.CreateDirectory(dir + subdir);
 
-            if (theseRecords != null && theseRecords.Count() > 0 && theseRecords[0] != null)
+
+            if (File.Exists(fullPath))
+                File.Delete(fullPath);
+
+            using (StreamWriter writer = new StreamWriter(fullPath))
             {
-                if (File.Exists(fullPath))
-                    File.Delete(fullPath);
-
-                using (StreamWriter writer = new StreamWriter(fullPath))
+                outputLine = '"' + "#ALT01#" + '"' + "," +
+                                '"' + "17003865" + '"' + "," +
+                                '"' + "TO" + '"' + "," +
+                                '"' + GetNumbers(EndDate) + '"' + "," +
+                                '"' + RunMode + '"' + "," +
+                                '"' + "02" + '"' + "," +
+                                '"' + "INVENTORY" + '"' + "," +
+                                '"' + '"';
+                writer.WriteLine(outputLine);
+                if (theseRecords != null && theseRecords.Count() > 0 && theseRecords[0] != null)
                 {
-                    outputLine = '"' + "#ALT01#" + '"' + "," +
-                                 '"' + "17003865" + '"' + "," +
-                                 '"' + "TO" + '"' + "," +
-                                 '"' + GetNumbers(EndDate) + '"' + "," +
-                                 '"' + RunMode + '"' + "," +
-                                 '"' + "02" + '"' + "," +
-                                 '"' + "INVENTORY" + '"' + "," +
-                                 '"' + '"';
-                    writer.WriteLine(outputLine);
-
                     foreach (JuulPurchaseFileRecord thisRecord in theseRecords)
                     {
                         if (thisRecord.QuantityShipped > 0)
                         {
                             outputLine = '"' + thisRecord.SKU + '"' + "," +
-                                         '"' + thisRecord.ItemDescription + '"' + "," +
-                                         '"' + thisRecord.Units + '"' + "," +
-                                         /*
+                                            '"' + thisRecord.ItemDescription + '"' + "," +
+                                            '"' + thisRecord.Units + '"' + "," +
+                                            /*
                                             '"' + thisRecord.ShipToCustNum + '"' + "," +
                                             '"' + thisRecord.ShipToCustName + '"' + "," +
                                             '"' + thisRecord.Address + '"' + "," +
                                             '"' + thisRecord.City + '"' + "," +
                                             '"' + thisRecord.State + '"' + "," +
                                             '"' + thisRecord.Zipcode.Trim() + '"' + "," +
-                                         */
-                                         '"' + thisRecord.QuantityShipped + '"' + "," +
-                                         '"' + thisRecord.CategoryCode + '"' + "," +
-                                         '"' + thisRecord.PromoDescription + '"' + "," +
-                                         '"' + "N" + '"' + "," +
-                                         '"' + '"' + "," +
-                                         '"' + thisRecord.UPC + '"' + "," +
-                                         '"' + "0" + '"'; // floor returns (altria only)
-                                        /*
-                                           '"' + thisRecord.ClassOfTrade + '"' + "," +
-                                           '"' + thisRecord.StateTaxJurisdiction + '"';
-                                        */
+                                            */
+                                            '"' + thisRecord.QuantityShipped + '"' + "," +
+                                            '"' + thisRecord.CategoryCode + '"' + "," +
+                                            '"' + thisRecord.PromoDescription + '"' + "," +
+                                            '"' + "N" + '"' + "," +
+                                            '"' + '"' + "," +
+                                            '"' + thisRecord.UPC + '"' + "," +
+                                            '"' + "0" + '"'; // floor returns (altria only)
+                                    /*
+                                        '"' + thisRecord.ClassOfTrade + '"' + "," +
+                                        '"' + thisRecord.StateTaxJurisdiction + '"';
+                                    */
                             writer.WriteLine(outputLine);
                         }
                     }
                 }
-                TransferFile(dir + subdir, filename, RunMode);
             }
+            TransferFile(dir + subdir, filename, RunMode);
         }
 
         private static string GetNumbers(string input)

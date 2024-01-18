@@ -11,4 +11,3 @@ C:\Users\scottf\Documents\mpcgolf\JUUL_Export\obj\Debug\JUUL_Export.csproj.CoreC
 C:\Users\scottf\Documents\mpcgolf\JUUL_Export\obj\Debug\JUUL_Export.csproj.CopyComplete
 C:\Users\scottf\Documents\mpcgolf\JUUL_Export\obj\Debug\JUUL_Export.exe
 C:\Users\scottf\Documents\mpcgolf\JUUL_Export\obj\Debug\JUUL_Export.pdb
-C:\Users\scottf\Documents\mpcgolf\JUUL_Export\obj\Debug\JUUL_Export.csproj.AssemblyReference.cache
